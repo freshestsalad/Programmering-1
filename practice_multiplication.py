@@ -11,7 +11,7 @@ def wrongMsg(n1, n2):
 
 print("*" * 30 + "\n" + "Träna multiplikationstabeller" + "\n" + "*" * 30)
 
-while True:                                    "h
+while True:
     try:
         difficulty = int(input("Välj svårighetsgrad" + "\n" + "1: Lätt" + "\n" + "2: Medel" + "\n" + "3: Svår" + "\n"))
     except ValueError:
