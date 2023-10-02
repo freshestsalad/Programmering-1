@@ -1,8 +1,8 @@
 import random
 
-score = 0
-n1 = 0
-n2 = 0
+score = 0                                   #Definierar poängena för hur många rätt svar användaren gett
+n1 = 0                                      #Definierar tal 1 som ska multipliceras
+n2 = 0                                      #Definierar tal 2 som ska multipliceras
 
 def correctMsg():                           #Printar vid ett rätt svar
     print("Perfekt! ")
