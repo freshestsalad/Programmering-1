@@ -7,16 +7,16 @@ def correctMsg():                           #Printar vid ett rätt svar
 def wrongMsg(n1, n2):                       #Printar vid ett fel svar och berättar rätt svar
     print("Fel svar, ", str(n1), " * ", str(n2), " är ", str(n1*n2) + "\n")
 
-def practiceMult(difficulty, questionLimit):
-    score = 0                                   #Definierar poängena för hur många rätt svar användaren gett
+def practiceMult(difficulty, questionLimit):    #Definierar funktionen practiceMult
+    score = 0                                   #Ger värde åt poängena för hur många rätt svar användaren gett
     for i in range(1, questionLimit + 1):
-        if difficulty == 1:
+        if difficulty == 1:                     #Ger värde åt talena som ska multipliceras vid svårighetsgrad 1
             n1 = random.randint(1, 11)          
             n2 = random.randint(1, 11)
-        elif difficulty == 2:
+        elif difficulty == 2:                   #Ger värde åt talena som ska multipliceras vid svårighetsgrad 2
             n1 = random.randint(11, 21)          
             n2 = random.randint(1, 11)
-        elif difficulty == 3:
+        elif difficulty == 3:                   #Ger värde åt talena som ska multipliceras vid svårighetsgrad 3
             n1 = random.randint(11, 21)          
             n2 = random.randint(11, 21)
         while True:                         #While-loop som ber användaren ange ett heltal som multiplikationssvar och kollar om svaret är korrekt
@@ -34,10 +34,10 @@ def practiceMult(difficulty, questionLimit):
                 wrongMsg(n1, n2)
 
     print("Du svarade rätt på " + str(score) + " av " + str(questionLimit) + " frågor")             #Anger hur många frågor av mängden frågor användaren fått rätt
-    print("Ditt vitsord är " + str((score*100)//questionLimit) + "%" + "\n")                               #Ger användaren ett vitsord som ett heltal i procent
+    print("Ditt vitsord är " + str((score*100)//questionLimit) + "%" + "\n")                        #Ger användaren ett vitsord som ett heltal i procent
     
-while repeat:
-    print("*" * 30 + "\n" + "Träna multiplikationstabeller" + "\n" + "*" * 30)
+while repeat:                                                                                 #While loop som kör spelet tills man skriver "sluta"
+    print("*" * 30 + "\n" + "Träna multiplikationstabeller" + "\n" + "*" * 30)                #Estetik: titel
 
     while True:                                 #Definierar en variabel som styr svårighetsgraden (Tvingar användaren välja ett heltal)
         try:
@@ -62,8 +62,8 @@ while repeat:
         else:
             break
     
-    practiceMult(difficulty, questionLimit)
+    practiceMult(difficulty, questionLimit)        #Anropar multiplikationsspelet
     
-    repeatEnd = input('Skriv "sluta" för att sluta' + "\n")
-    if repeatEnd == "sluta":
+    repeatEnd = input('Skriv "sluta" för att sluta' + "\n")    #Frågar användaren ifall hen vill sluta spelet
+    if repeatEnd == "sluta" or repeatEnd == "Sluta":                     #Endast inputen "sluta" eller "Sluta" stänger loopen som kör spelet
         repeat = False
