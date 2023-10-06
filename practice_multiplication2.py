@@ -65,5 +65,5 @@ while repeat:                                                                   
     practiceMult(difficulty, questionLimit)        #Anropar multiplikationsspelet
     
     repeatEnd = input('Skriv "sluta" för att sluta' + "\n")    #Frågar användaren ifall hen vill sluta spelet
-    if repeatEnd == "sluta" or repeatEnd == "Sluta":                     #Endast inputen "sluta" eller "Sluta" stänger loopen som kör spelet
+    if repeatEnd.lower() == "sluta":                     #Inputen "Sluta" (oberoende av kapitalisering) stoppar "while repeat" loopen
         repeat = False
