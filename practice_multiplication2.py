@@ -5,7 +5,7 @@ repeat = True
 def correctMsg():                           #Printar vid ett rätt svar
     print("Perfekt! ")
 def wrongMsg(n1, n2):                       #Printar vid ett fel svar och berättar rätt svar
-    print("Fel svar, ", str(n1), " * ", str(n2), " är ", str(n1*n2) + "\n")
+    print("Fel svar, " + str(n1) + " * " + str(n2) + " är " + str(n1*n2) + "\n")
 
 def practiceMult(difficulty, questionLimit):    #Definierar funktionen practiceMult
     score = 0                                   #Ger värde åt poängena för hur många rätt svar användaren gett
