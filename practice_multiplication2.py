@@ -11,14 +11,14 @@ def practiceMult(difficulty, questionLimit):    #Definierar funktionen practiceM
     score = 0                                   #Ger värde åt poängena för hur många rätt svar användaren gett
     for i in range(1, questionLimit + 1):
         if difficulty == 1:                     #Ger värde åt talena som ska multipliceras vid svårighetsgrad 1
-            n1 = random.randint(1, 11)          
-            n2 = random.randint(1, 11)
+            n1 = random.randint(1, 10)          
+            n2 = random.randint(1, 10)
         elif difficulty == 2:                   #Ger värde åt talena som ska multipliceras vid svårighetsgrad 2
-            n1 = random.randint(11, 21)          
-            n2 = random.randint(1, 11)
+            n1 = random.randint(11, 20)          
+            n2 = random.randint(1, 10)
         elif difficulty == 3:                   #Ger värde åt talena som ska multipliceras vid svårighetsgrad 3
-            n1 = random.randint(11, 21)          
-            n2 = random.randint(11, 21)
+            n1 = random.randint(11, 20)          
+            n2 = random.randint(11, 20)
         while True:                         #While-loop som ber användaren ange ett heltal som multiplikationssvar och kollar om svaret är korrekt
             try: 
                 answer = int(input("\n" + "Vad är " + str(n1) + " * " + str(n2) + "?" + "\n"))
