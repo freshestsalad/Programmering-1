@@ -3,12 +3,12 @@
 
 repeat = True
 
-def cryptMessage():
+def cryptMessage():                                                #Definierar funktionen som krypterar meddelanden
     newMessage = ""
-    oldMessage = input("Meddelandet du vill kryptera: " + "\n")
+    oldMessage = input("Meddelandet du vill kryptera: " + "\n")    #Ber användaren mata in meddelandet som ska krypteras
     while True:
         try:
-            key = ord(input("Ange nyckeln: " + "\n"))
+            key = ord(input("Ange nyckeln: " + "\n"))              #Ber användaren ange ett tecken som nyckel, utmatningen är en Unicode character
         except TypeError:
             print("Nyckeln bör vara 1 tecken!" + "\n")
             continue
@@ -61,6 +61,6 @@ while repeat:
     elif chooseTask == 2:
         decryptMessage()
 
-    repeatEnd = input('Skriv "sluta" för att sluta' + "\n")    #Frågar användaren ifall hen vill sluta spelet
-    if repeatEnd.lower() == "sluta":                     #Inputen "Sluta" (oberoende av kapitalisering) stoppar "while repeat" loopen
+    repeatEnd = input('Skriv "sluta" för att sluta' + "\n")    #Frågar användaren ifall hen vill sluta loopen/programmet
+    if repeatEnd.lower() == "sluta":                           #Inputen "Sluta" (oberoende av kapitalisering) stoppar "while repeat" loopen
         repeat = False
