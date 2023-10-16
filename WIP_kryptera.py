@@ -3,27 +3,34 @@
 
 repeat = True
 
-def cryptMessage():                                                #Definierar funktionen som krypterar meddelanden
+def cryptMessage():
     newMessage = ""
-    oldMessage = input("Meddelandet du vill kryptera: " + "\n")    #Ber användaren mata in meddelandet som ska krypteras
+    oldMessage = input("Meddelandet du vill kryptera: " + "\n")        
     while True:
         try:
-            key = ord(input("Ange nyckeln: " + "\n"))              #Ber användaren ange ett tecken som nyckel, utmatningen är en Unicode character
+            key = ord(input("Ange nyckeln: " + "\n"))
         except TypeError:
             print("Nyckeln bör vara 1 tecken!" + "\n")
             continue
         else:
             break
+    
+    if chooseTask == 1:
+        key = key
+    elif chooseTask == 2:
+        key = - key
 
     for oldCharacter in oldMessage:
         if oldCharacter.isupper():
             newCharacter = chr((ord(oldCharacter) + key - 65) % 26 + 65)
         elif oldCharacter.islower():
             newCharacter = chr((ord(oldCharacter) + key - 97) % 26 + 97)
+        else:
+            newCharacter = oldCharacter
         newMessage += newCharacter
     print(newMessage)
 
-def decryptMessage():
+def decryptMessage():                   #Onödigt för tillfället
     oldMessage = ""
     newMessage = input("Meddelandet du vill dekryptera: " + "\n")
     while True:
@@ -40,6 +47,8 @@ def decryptMessage():
             oldCharacter = chr((ord(newCharacter) - key - 65) % 26 + 65)
         elif newCharacter.islower():
             oldCharacter = chr((ord(newCharacter) - key - 97) % 26 + 97)
+        else:
+            newCharacter = oldCharacter
         oldMessage += oldCharacter
     print(oldMessage)
 
@@ -59,8 +68,8 @@ while repeat:
     if chooseTask == 1:
         cryptMessage()
     elif chooseTask == 2:
-        decryptMessage()
+        decryptMessage
 
-    repeatEnd = input('Skriv "sluta" för att sluta' + "\n")    #Frågar användaren ifall hen vill sluta loopen/programmet
-    if repeatEnd.lower() == "sluta":                           #Inputen "Sluta" (oberoende av kapitalisering) stoppar "while repeat" loopen
+    repeatEnd = input('Skriv "sluta" för att sluta' + "\n")    #Frågar användaren ifall hen vill sluta spelet
+    if repeatEnd.lower() == "sluta":                     #Inputen "Sluta" (oberoende av kapitalisering) stoppar "while repeat" loopen
         repeat = False
