@@ -5,7 +5,12 @@ repeat = True                                                      #Booleiska va
 
 def cryptMessage():                                                #Definierar funktionen cryptMessage()
     newMessage = ""                                                #Tom sträng
-    oldMessage = input("Meddelandet du vill kryptera: " + "\n")    #Ber användaren mata in strängen hen vill kryptera
+    while True:
+        oldMessage = input("Meddelandet du vill dekryptera: " + "\n")           #Ber användaren mata in ett meddelande
+        if oldMessage.strip() == "":                                            #Inmatade meddelandet måste innehålla tecken, som inte endast är mellanslag
+            print("Meddelandet får inte vara tomt" + "\n")
+        else:
+            break
     while True:
         try:
             key = ord(input("Ange nyckeln: " + "\n"))              #Ber användaren mata in nyckeln och ändrar den till heltalet som representerar Unicode charactern
@@ -26,13 +31,19 @@ def cryptMessage():                                                #Definierar f
     print(newMessage)                                                           #Skriver ut nya meddelandet
 
 def decryptMessage():
-    oldMessage = ""
-    newMessage = input("Meddelandet du vill dekryptera: " + "\n")
+    oldMessage = ""                                                             #Tom sträng
+    while True:
+        newMessage = input("Meddelandet du vill dekryptera: " + "\n")           #Ber användaren mata in ett meddelande
+        if newMessage.strip() == "":                                            #Inmatade meddelandet måste innehålla tecken, som inte endast är mellanslag
+            print("Meddelandet får inte vara tomt" + "\n")
+        else:
+            break
+    
     while True:
         try:
-            key = ord(input("Ange nyckeln: " + "\n"))
+            key = ord(input("Ange nyckeln: " + "\n"))              #Ber användaren mata in nyckeln och ändrar den till heltalet som representerar Unicode charactern
         except TypeError:
-            print("Nyckeln bör vara 1 tecken!" + "\n")
+            print("Nyckeln bör vara 1 tecken!" + "\n")             #Ber användaren ange endast ett tecken
             continue
         else:
             break
